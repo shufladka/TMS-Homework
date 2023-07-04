@@ -1,2 +1,3 @@
 rootProject.name = 'TMS-Java-C23'
+include 'lesson1'
 
