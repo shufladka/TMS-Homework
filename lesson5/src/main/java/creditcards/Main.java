@@ -10,7 +10,7 @@
 Выведите на экран текущее состояние всех трех карточек.
 */
 
-package org.tms.creditcards;
+package creditcards;
 
 import java.util.Scanner;
 

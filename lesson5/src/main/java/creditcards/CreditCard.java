@@ -1,4 +1,4 @@
-package org.tms.creditcards;
+package creditcards;
 
 public class CreditCard {
 
@@ -25,9 +25,15 @@ public class CreditCard {
 
     // метод, который позволяет снимать с карточки некоторую сумму
     public void withdraw (int sum) {
-        accountBalance -= sum;
-        System.out.print("Операция совершена успешно! ");
-        currentBalance();
+        if ((accountBalance - sum) > 0) {
+            accountBalance -= sum;
+            System.out.print("Операция совершена успешно! ");
+            currentBalance();
+        }
+        else {
+            System.out.println("Ошибка операции: недостаточно средств.");
+            currentBalance();
+        }
     }
 
     // метод, который выводит текущую информацию о карточке
