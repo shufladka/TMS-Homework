@@ -1,5 +1,5 @@
 package org.tms.office;
 
 public interface Position {
-    void PrintPosition(String position);
+    void PrintPosition(String text);
 }

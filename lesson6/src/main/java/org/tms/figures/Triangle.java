@@ -1,17 +1,26 @@
 package org.tms.figures;
 
-public class Triangle extends AbstractFigures {
+public class Triangle extends Figure {
+
+    private int sideA;
+    private int sideB;
+    private int sideC;
+
+    public Triangle(int sideA, int sideB, int sideC) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
+    }
 
     // метод Perimeter для нахождения периметра прямоугольного треугольника
-    public int Perimeter(int sideA, int sideB, int sideC) {
-        int result = sideA + sideB + sideC;
-        System.out.println("Периметр треугольника со сторонами " + sideA + ", " + sideB + ", " + sideC + " равен " + result);
-        return result;
+    @Override
+    public int perimeter() {
+        return sideA + sideB + sideC;
     }
 
     // метод Square для нахождения площади прямоугольного треугольника
-    public void Square(int sideA, int sideB) {
-        float result = 0.5f * (sideA * sideB);
-        System.out.println("Площадь прямоугольного треугольника с основанием " + sideA + " и высотой " + sideB + " равна " + result + "\n");
+    @Override
+    public double square() {
+        return 0.5f * (sideA * sideB);
     }
 }
