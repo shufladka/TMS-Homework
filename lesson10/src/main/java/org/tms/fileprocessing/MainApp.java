@@ -33,9 +33,9 @@ public class MainApp {
         String readerFilePath = scanner.nextLine();
 
         // задаем путь к файлам, где должны храниться валидные и невалидные номера документов
-        // String readerFilePath = "E:/javaprojects/TMS-Homework/lesson10/src/main/java/org/tms/fileprocessing/docnames.txt";
-        String validFilePath = "E:/javaprojects/TMS-Homework/lesson10/src/main/java/org/tms/fileprocessing/valid.txt";
-        String invalidFilePath = "E:/javaprojects/TMS-Homework/lesson10/src/main/java/org/tms/fileprocessing/invalid.txt";
+        // String readerFilePath = "lesson10/src/main/resources/docnames.txt";
+        String validFilePath = "lesson10/src/main/resources/valid.txt";
+        String invalidFilePath = "lesson10/src/main/resources/invalid.txt";
 
         try (LineNumberReader reader = new LineNumberReader(new BufferedReader(new FileReader(readerFilePath)));
              Writer validWriter = new FileWriter(validFilePath);
@@ -48,7 +48,7 @@ public class MainApp {
             while (string != null) {
 
                 // если номер документа валиден, записываем его в соответствующий файл и выводим на консоль
-                if (isValidName(string).equals("true")) {
+                if (isValidName(string)) {
                     validWriter.write(string + "\n");
 
                     System.out.println(string + " - валидный номер документа.");
@@ -56,9 +56,9 @@ public class MainApp {
 
                 // иначе записываем его в файл с невалидными номерами документов с причиной некорректности и выводим на консоль
                 else {
-                    invalidWriter.write(string + " . is invalid. Reason: " + isValidName(string) + "\n");
+                    invalidWriter.write(string + " . is invalid. Reason: incorrect name.\n");
 
-                    System.out.println(string + " - невалидный номер документа. Причина: " + isValidName(string));
+                    System.out.println(string + " - невалидный номер документа. Причина: некорректное имя");
                 }
 
                 // переходим к чтению следующей строки во входном файле
@@ -70,7 +70,7 @@ public class MainApp {
     }
 
     // метод для проверки имени документа на соответствие условию
-    private static String isValidName (String string) {
+    private static boolean isValidName (String string) {
 
         if (string.length() == 15) {
             if (string.startsWith("docnum") || string.startsWith("contract")) {
@@ -79,14 +79,11 @@ public class MainApp {
                     // проверка на соответствие символа букве или цифре согласно таблице ASCII
                     if ((string.charAt(i) >= 48 && string.charAt(i) <= 57)
                             || (string.toLowerCase().charAt(i) >= 97 && string.toLowerCase().charAt(i) <= 122)) {
-                        return "true";
+                        return true;
                     }
                 }
             }
-            else {
-                return "file must start with 'docnum' or 'contract'";
-            }
         }
-        return "invalid file length";
+        return false;
     }
 }
