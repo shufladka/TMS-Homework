@@ -9,7 +9,7 @@ public class Worker extends Employee {
     // метод для вывода на консоль информации в формате ...
     public void showInformation() {
         System.out.print("Сотрудник: " + super.getFirstName() + " " + super.getLastName() + ". ");
-        salaryCalculation();
+        System.out.println("Зарплата: " + salaryCalculation() + " рублей");
     }
 
     @Override

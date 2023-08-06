@@ -37,9 +37,8 @@ public abstract class Employee {
     }
 
     // метод для расчета заработной платы
-    public void salaryCalculation () {
-        double workExperienceMF = workExperienceMFRecalculation(workExperience);
-        System.out.println("Зарплата: " + (int)(Staff.WORKER.getBaseRate() * Staff.WORKER.getMultiplyingFactor() * workExperienceMF) + " рублей");
+    public int salaryCalculation () {
+        return (int)(Staff.WORKER.getBaseRate() * Staff.WORKER.getMultiplyingFactor() * workExperienceMFRecalculation(workExperience));
     }
 
     @Override

@@ -2,7 +2,7 @@ package org.tms.structure;
 
 public enum Staff {
 
-    DIRECTOR (1850, 1.0, 1.0),
+    DIRECTOR (1850, 1.33, 1.0),
     WORKER (1400,1.0, 1.0);
 
     public int baseRate;              // базовая ставка
@@ -21,5 +21,9 @@ public enum Staff {
 
     public double getMultiplyingFactor() {
         return multiplyingFactor;
+    }
+
+    public double getWorkExperienceMF() {
+        return workExperienceMF;
     }
 }

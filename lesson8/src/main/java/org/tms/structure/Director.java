@@ -10,9 +10,8 @@ public class Director extends Employee {
 
     // метод для перерасчета заработной платы директору
     @Override
-    public void salaryCalculation () {
-        double workExperienceMF = workExperienceMFRecalculation(workExperience);
-        System.out.println("Зарплата: " + (int)(Staff.DIRECTOR.getBaseRate() * Staff.DIRECTOR.getMultiplyingFactor() * workExperienceMF) + " рублей");
+    public int salaryCalculation () {
+        return (int)(Staff.DIRECTOR.getBaseRate() * Staff.DIRECTOR.getMultiplyingFactor() * workExperienceMFRecalculation(workExperience));
     }
 
     @Override
@@ -23,7 +22,7 @@ public class Director extends Employee {
     // метод для вывода на консоль информации в формате ...
     public void showInformation() {
         System.out.print("Сотрудник: " + super.getFirstName() + " " + super.getLastName() + ". ");
-        salaryCalculation();
+        System.out.println("Зарплата: " + salaryCalculation() + " рублей");
     }
 
     // метод для добавления новых подчиненных под управление директора
@@ -47,16 +46,5 @@ public class Director extends Employee {
                 System.out.println(employees[i].toString());
             }
         }
-    }
-
-    // метод для определения количества подчиненных
-    public int sumOfSubordinates () {
-        int counter = 0;
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i] != null) {
-                counter++;
-            }
-        }
-        return counter;
     }
 }

@@ -3,16 +3,18 @@ package org.tms.structure;
 public class FindSubordinateService {
 
     // метод для поиска сотрудников в прямом и косвенном подчинении
-    public boolean findSubordinates (String firstName, String lastName, int length, Employee[] ... employeesList) {
+    public boolean findSubordinates(Director director, String firstName, String lastName) {
+        for (Employee employee : director.employees) {
+            if (employee != null) {
 
-        // поиск среди сотрудников в прямом подчинении
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < length; j++) {
-                if (employeesList[i][j] != null) {
-                    System.out.println(employeesList[i][j].toString());
-                    if ((employeesList[i][j].getFirstName().equals(firstName)) && (employeesList[i][j].getLastName().equals(lastName))) {
-                        return true;
-                    }
+                // если имя и фамилия искомого сотрудника совпадают с подчиненными текущего директора, то возвращаем true
+                if (employee.getFirstName().equals(firstName) && employee.getLastName().equals(lastName)) {
+                    return true;
+                }
+
+                // ...иначе пытаемся найти его у подчиненного директора
+                else if (employee.getPosition() == Staff.DIRECTOR) {
+                    return findSubordinates((Director) employee, firstName, lastName);
                 }
             }
         }

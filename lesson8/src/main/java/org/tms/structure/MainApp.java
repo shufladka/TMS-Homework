@@ -67,25 +67,12 @@ public class MainApp {
 
         // поиск вглубь (среди всех подчиненных одного директора)
         // задаем искомые имя и фамилию
-        String findFirstName = "Константин";
-        String findLastName = "Константинов";
+        String findFirstName = "Семен";
+        String findLastName = "Семенов";
         FindSubordinateService find = new FindSubordinateService();
 
-        // составляем массив, в котором будет происходить поиск заданного сотрудника, для прямого и косвенного поиска
-        Employee[][] directorsList = { director1.employees, director2.employees };
-
-        // определение максимальной длины одного из массивов для правильной работы сервиса по поиску подчиненного
-        int maxLength = director1.sumOfSubordinates();
-
-        if (maxLength < director2.sumOfSubordinates()) {
-            maxLength = director2.sumOfSubordinates();
-        }
-
         // взятие булевого значения, возвращаемого поисковым сервисом (был найден сотрудник или нет)
-        boolean isWorker = find.findSubordinates(findFirstName, findLastName, maxLength, directorsList);
-
-        // выводим пустую строку для удобства чтения данных с консоли
-        System.out.println(" ");
+        boolean isWorker = find.findSubordinates(director1, findFirstName, findLastName);
 
         if (isWorker) {
             System.out.println("Сотрудник " + findFirstName + " " + findLastName +
