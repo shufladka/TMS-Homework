@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 21</title>
+</head>
+
+<body>
+    <form method="post" action="/login">
+        <h3>Запись на курсы</h3>
+        <hr>
+            <p>
+                <label>Имя:
+                    <br>
+                    <input type="text" name="name" placeholder="Алексей">
+                </label>
+            </p>
+            <p>Язык программирования:
+                <br>
+                <label>
+                    <input type="radio" name="language" value="0">C++</label>
+                <br>
+                <label>
+                    <input type="radio" name="language" value="1">PHP</label>
+                <br>
+                <label>
+                    <input type="radio" name="language" value="2">Python</label>
+            </p>
+            <p>
+                <label>Дополнительная информация:
+                    <br>
+                    <textarea name="text" rows="5" cols="30" placeholder="Есть опыт программирования на C++"></textarea>
+                </label>
+            </p>
+            <p>
+                <label>Секретное слово:
+                    <br>
+                    <input type="password" name="password">
+                </label>
+            </p>
+            <p>
+                <input type="submit" name="button">
+                <input type="reset" name="reset" value="Очистить">
+            </p>
+            <hr>
+        </form>
+    </body>
+</html>
