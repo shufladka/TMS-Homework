@@ -1,3 +1,5 @@
+package org.tms;
+
 public class Singleton {
     private static Singleton INSTANCE;
 
