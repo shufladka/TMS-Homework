@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.tms.service.AccountService" name="accountService"/>
+
+    <bean class="org.tms.service.PairService" name="pairService">
+        <constructor-arg>
+            <list>
+                <ref bean="couple1"/>
+                <ref bean="couple2"/>
+                <ref bean="couple3"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean class="org.tms.service.RaceService" name="horseRacing">
+        <constructor-arg index="1" ref="pairService"/>
+        <constructor-arg type="org.tms.service.AccountService" ref="accountService"/>
+    </bean>
+
+    <bean class="org.tms.domain.Pairs" name="couple1">
+        <constructor-arg index="0" ref="jokey1"/>
+        <constructor-arg index="1" ref="horse1"/>
+    </bean>
+    <bean class="org.tms.domain.Jokey" name="jokey1">
+        <constructor-arg index="0" value="Pavel"/>
+        <constructor-arg index="1" value="Petrov"/>
+    </bean>
+    <bean class="org.tms.domain.Horse" name="horse1">
+        <constructor-arg index="0" value="Alyaska"/>
+        <constructor-arg index="1" value="0.17"/>
+    </bean>
+
+    <bean class="org.tms.domain.Pairs" name="couple2">
+        <constructor-arg index="0" ref="jokey2"/>
+        <constructor-arg index="1" ref="horse2"/>
+    </bean>
+    <bean class="org.tms.domain.Jokey" name="jokey2">
+        <constructor-arg index="0" value="Konstantin"/>
+        <constructor-arg index="1" value="Konstantinov"/>
+    </bean>
+    <bean class="org.tms.domain.Horse" name="horse2">
+        <constructor-arg index="0" value="Sonya"/>
+        <constructor-arg index="1" value="0.19"/>
+    </bean>
+
+    <bean class="org.tms.domain.Pairs" name="couple3">
+        <constructor-arg index="0" ref="jokey3"/>
+        <constructor-arg index="1" ref="horse3"/>
+    </bean>
+    <bean class="org.tms.domain.Jokey" name="jokey3">
+        <constructor-arg index="0" value="Eugene"/>
+        <constructor-arg index="1" value="Prigozhin"/>
+    </bean>
+    <bean class="org.tms.domain.Horse" name="horse3">
+        <constructor-arg index="0" value="Morgana"/>
+        <constructor-arg index="1" value="0.15"/>
+    </bean>
+
+</beans>
