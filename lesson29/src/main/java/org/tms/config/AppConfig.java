@@ -63,7 +63,6 @@ public class AppConfig {
 
 
     @Bean
-    @Scope("singleton")
     AccountService accountService(){
         return new AccountService();
     }

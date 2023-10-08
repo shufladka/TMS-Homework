@@ -16,6 +16,5 @@ public class MainApp {
         RaceService bean = context.getBean(RaceService.class);
 
         bean.game();
-
     }
 }
