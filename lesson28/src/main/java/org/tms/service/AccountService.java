@@ -1,10 +1,11 @@
 package org.tms.service;
 
 import org.springframework.lang.NonNull;
+import org.tms.interfaces.AccountInterface;
 
 import java.util.Scanner;
 
-public class AccountService {
+public class AccountService implements AccountInterface {
 
     private double balance = 10_000;    // стартовый баланс равен 10 000 условных единиц
     private double bet;                 // величина ставки

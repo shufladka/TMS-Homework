@@ -1,10 +1,11 @@
 package org.tms.service;
 
 import org.tms.domain.Pairs;
+import org.tms.interfaces.RaceInterface;
 
 import java.util.Random;
 
-public class RaceService {
+public class RaceService implements RaceInterface {
 
     private final AccountService accountService;
     private final PairService pairService;

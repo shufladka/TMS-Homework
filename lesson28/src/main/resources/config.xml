@@ -15,7 +15,7 @@
         </constructor-arg>
     </bean>
 
-    <bean class="org.tms.service.RaceService" name="horseRacing">
+    <bean class="org.tms.service.RaceService" name="horseRacing" scope="singleton">
         <constructor-arg index="1" ref="pairService"/>
         <constructor-arg type="org.tms.service.AccountService" ref="accountService"/>
     </bean>

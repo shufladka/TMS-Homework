@@ -1,13 +1,14 @@
 package org.tms.service;
 
 import org.tms.domain.Pairs;
+import org.tms.interfaces.PairInterface;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class PairService {
+public class PairService implements PairInterface {
 
     private final List<Pairs> pairs;
 
