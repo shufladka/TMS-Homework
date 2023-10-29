@@ -40,39 +40,39 @@ public class MainApp {
 
     public static void main(String[] args) {
 
-        createTables();
+//        createTables();
 
-//        // создаем объекты классов-имплементаций
-//        UserServiceImpl userService = new UserServiceImpl();
-//        TaskServiceImpl taskService = new TaskServiceImpl();
-//
-//        // создаем пользователей
-//        UserEntity firstUser = userService.create("Pavel", new Date(), Sex.MALE, UserType.USER);
-//        UserEntity secondUser = userService.create("Anna", new Date(), Sex.FEMALE, UserType.ADMIN);
-//
-//        // создаем задачи
-//        TaskEntity firstTask = taskService.create("Daily", "Make a payment", TaskStatus.NEW, firstUser);
-//        TaskEntity secondTask = taskService.create("Urgent", "Look at the kittens", TaskStatus.NEW, firstUser);
-//        TaskEntity thirdTask = taskService.create("Daily", "Discuss colleagues", TaskStatus.NEW, secondUser);
-//        TaskEntity fourthTask = taskService.create("Urgent", "Meet on Zoom", TaskStatus.NEW, secondUser);
-//
-//        // назначаем задачи
-//        firstUser.addNewTask(firstTask);
-//        firstUser.addNewTask(secondTask);
-//        secondUser.addNewTask(thirdTask);
-//        secondUser.addNewTask(fourthTask);
-//
-//        // обновляем статус задач
-//        taskService.refreshStatus(secondTask, TaskStatus.IN_PROGRESS);
-//        taskService.refreshStatus(thirdTask, TaskStatus.DONE);
-//
-//        // выводим пользователей с активными задачами
-//        List<UserEntity> busyUsers = userService.findBusyUsers(TaskStatus.DONE);
-//        System.out.println(busyUsers);
-//
-//        // удаляем всех пользователей
-//        userService.delete(firstUser);
-//        userService.delete(secondUser);
+        // создаем объекты классов-имплементаций
+        UserServiceImpl userService = new UserServiceImpl();
+        TaskServiceImpl taskService = new TaskServiceImpl();
+
+        // создаем пользователей
+        UserEntity firstUser = userService.create("Pavel", new Date(), Sex.MALE, UserType.USER);
+        UserEntity secondUser = userService.create("Anna", new Date(), Sex.FEMALE, UserType.ADMIN);
+
+        // создаем задачи
+        TaskEntity firstTask = taskService.create("Daily", "Make a payment", TaskStatus.NEW, firstUser);
+        TaskEntity secondTask = taskService.create("Urgent", "Look at the kittens", TaskStatus.NEW, firstUser);
+        TaskEntity thirdTask = taskService.create("Daily", "Discuss colleagues", TaskStatus.NEW, secondUser);
+        TaskEntity fourthTask = taskService.create("Urgent", "Meet on Zoom", TaskStatus.NEW, secondUser);
+
+        // назначаем задачи
+        firstUser.addNewTask(firstTask);
+        firstUser.addNewTask(secondTask);
+        secondUser.addNewTask(thirdTask);
+        secondUser.addNewTask(fourthTask);
+
+        // обновляем статус задач
+        taskService.refreshStatus(secondTask, TaskStatus.IN_PROGRESS);
+        taskService.refreshStatus(thirdTask, TaskStatus.DONE);
+
+        // выводим пользователей с активными задачами
+        List<UserEntity> busyUsers = userService.findBusyUsers(TaskStatus.DONE);
+        System.out.println(busyUsers);
+
+        // удаляем всех пользователей
+        userService.delete(firstUser);
+        userService.delete(secondUser);
     }
 
     // метод предназначен для создания таблиц людей и телефонов в случае отладки программы
