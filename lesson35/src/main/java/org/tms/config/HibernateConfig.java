@@ -20,6 +20,7 @@ public class HibernateConfig {
         configuration.setProperty("hibernate.show.sql", "true");
 //        configuration.setProperty("hibernate.hbm2ddl.auto", "update");
         configuration.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+//        configuration.setProperty("hibernate.hbm2ddl.auto", "none");
 
         configuration.addAnnotatedClass(UserEntity.class);
         configuration.addAnnotatedClass(TaskEntity.class);

@@ -37,13 +37,13 @@ public class UserEntity {
     @Enumerated(EnumType.STRING)
     private Sex sex;
 
-    @OneToMany(mappedBy = "userEntity", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "userEntity", cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     private List<TaskEntity> tasks;
 
     // пополнение списка заданий пользователя
     public void addNewTask(TaskEntity task) {
 
-        if (tasks.isEmpty()) {
+        if (tasks == null || tasks.isEmpty()) {
             tasks = new ArrayList<>();
         }
 

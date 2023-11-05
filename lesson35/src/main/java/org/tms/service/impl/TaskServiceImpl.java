@@ -66,9 +66,9 @@ public class TaskServiceImpl implements TaskService {
         Session session = HibernateConfig.create();
         Transaction transaction = session.beginTransaction();
 
-        Query query = session.createQuery("update TaskEntity as te set te.taskStatus =: statusUpdated where te.id =: taskEntity_uuid");
+        Query query = session.createQuery("update TaskEntity as te set te.taskStatus =: statusUpdated where te.id =: taskId");
         query.setParameter("statusUpdated", taskStatus);
-        query.setParameter("taskEntity_uuid", taskEntity.getTaskId());
+        query.setParameter("taskId", taskEntity.getTaskId());
         query.executeUpdate();
 
         taskEntity.setTaskStatus(taskStatus);

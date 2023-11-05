@@ -70,6 +70,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void delete(UserEntity userEntity) {
+
         Session session = HibernateConfig.create();
         Transaction transaction = session.beginTransaction();
 
@@ -81,6 +82,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserEntity> findBusyUsers(TaskStatus taskStatus) {
+
         Session session = HibernateConfig.create();
         Transaction transaction = session.beginTransaction();
 
