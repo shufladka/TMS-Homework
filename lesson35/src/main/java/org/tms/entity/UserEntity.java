@@ -43,7 +43,7 @@ public class UserEntity {
     // пополнение списка заданий пользователя
     public void addNewTask(TaskEntity task) {
 
-        if (tasks == null || tasks.isEmpty()) {
+        if (tasks == null) {
             tasks = new ArrayList<>();
         }
 

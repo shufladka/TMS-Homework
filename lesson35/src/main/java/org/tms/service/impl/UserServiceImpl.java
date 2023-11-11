@@ -86,8 +86,8 @@ public class UserServiceImpl implements UserService {
         Session session = HibernateConfig.create();
         Transaction transaction = session.beginTransaction();
 
-        Query query = session.createQuery("select ue from UserEntity as ue join ue.tasks as tsks where tsks.taskStatus =: activeStatus");
-        query.setParameter("activeStatus", taskStatus);
+        Query query = session.createQuery("select ue from UserEntity as ue join ue.tasks as tsks where tsks.taskStatus =: currentStatus");
+        query.setParameter("currentStatus", taskStatus);
         List resultList = query.getResultList();
 
         transaction.commit();

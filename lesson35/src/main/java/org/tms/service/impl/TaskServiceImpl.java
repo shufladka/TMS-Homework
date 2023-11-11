@@ -35,25 +35,12 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public void getTaskByTaskId(String id) {
+    public void getTaskByTaskId(UUID uuid) {
 
         Session session = HibernateConfig.create();
         Transaction transaction = session.beginTransaction();
 
-        TaskEntity taskEntity = session.find(TaskEntity.class, UUID.fromString(id));
-        System.out.println(taskEntity);
-
-        transaction.commit();
-        session.close();
-    }
-
-    @Override
-    public void getTaskByUser(UserEntity userEntity) {
-
-        Session session = HibernateConfig.create();
-        Transaction transaction = session.beginTransaction();
-
-        TaskEntity taskEntity = session.find(TaskEntity.class, userEntity.getUserId());
+        TaskEntity taskEntity = session.find(TaskEntity.class, uuid);
         System.out.println(taskEntity);
 
         transaction.commit();
