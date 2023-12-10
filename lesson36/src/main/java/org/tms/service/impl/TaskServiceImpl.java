@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.tms.config.HibernateConfig;
 import org.tms.entity.TaskEntity;
-import org.tms.entity.TaskStatus;
+import org.tms.entity.additions.TaskStatus;
 import org.tms.entity.UserEntity;
 import org.tms.service.interfaces.TaskService;
 
@@ -48,17 +48,17 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public void refreshStatus(TaskEntity taskEntity, TaskStatus taskStatus) {
+    public void refreshStatus(UUID taskID, TaskStatus taskStatus) {
 
         Session session = HibernateConfig.create();
         Transaction transaction = session.beginTransaction();
 
         Query query = session.createQuery("update TaskEntity as te set te.taskStatus =: statusUpdated where te.id =: taskId");
         query.setParameter("statusUpdated", taskStatus);
-        query.setParameter("taskId", taskEntity.getTaskId());
+        query.setParameter("taskId", taskID);
         query.executeUpdate();
 
-        taskEntity.setTaskStatus(taskStatus);
+        //taskEntity.setTaskStatus(taskStatus);
 
         transaction.commit();
         session.close();

@@ -1,4 +1,4 @@
-package org.tms.entity;
+package org.tms.entity.additions;
 
 public enum Sex {
     MALE,

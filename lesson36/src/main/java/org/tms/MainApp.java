@@ -32,16 +32,15 @@
 
 package org.tms;
 
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.tms.config.HibernateConfig;
 import org.tms.entity.*;
-import org.tms.service.dto.UserServiceDto;
+import org.tms.entity.additions.Sex;
+import org.tms.entity.additions.TaskStatus;
+import org.tms.entity.additions.UserType;
+import org.tms.service.search.CriteriaSearch;
 import org.tms.service.impl.UserServiceImpl;
 import org.tms.service.impl.TaskServiceImpl;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 public class MainApp {
@@ -69,8 +68,8 @@ public class MainApp {
         secondUser.addNewTask(fourthTask);
 
         // обновляем статус задач
-        taskService.refreshStatus(secondTask, TaskStatus.IN_PROGRESS);
-        taskService.refreshStatus(thirdTask, TaskStatus.DONE);
+        taskService.refreshStatus(secondTask.getTaskId(), TaskStatus.IN_PROGRESS);
+        taskService.refreshStatus(thirdTask.getTaskId(), TaskStatus.DONE);
 
         // выводим пользователей с активными задачами
         List<UserEntity> busyUsers = userService.findBusyUsers(TaskStatus.DONE);
@@ -78,7 +77,7 @@ public class MainApp {
 
         // ищем пользователей согласно условию задачи
         System.out.println(" ");
-        System.out.println(UserServiceDto.searchCriteria(firstUser));
+        System.out.println(CriteriaSearch.personCriteria(firstUser));
 
         // удаляем всех пользователей
         userService.delete(firstUser);

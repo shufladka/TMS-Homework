@@ -4,11 +4,13 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.tms.config.HibernateConfig;
 import org.tms.entity.*;
+import org.tms.entity.additions.Sex;
+import org.tms.entity.additions.TaskStatus;
+import org.tms.entity.additions.UserType;
 import org.tms.service.interfaces.UserService;
 
 import javax.persistence.Query;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 

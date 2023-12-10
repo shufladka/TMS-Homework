@@ -2,6 +2,7 @@ package org.tms.entity;
 
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
+import org.tms.entity.additions.TaskStatus;
 
 import javax.persistence.*;
 import java.util.UUID;
@@ -10,10 +11,10 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
 @Entity
 @Table(name = "tasks")
 public class TaskEntity {
+
     @Id
     @GeneratedValue(generator = "uuid-generator")
     @GenericGenerator(name = "uuid_generator", strategy = "org.hibernate.id.UUIDGenerator")

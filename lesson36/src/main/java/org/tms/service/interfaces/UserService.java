@@ -1,9 +1,11 @@
 package org.tms.service.interfaces;
 
 import org.tms.entity.*;
+import org.tms.entity.additions.Sex;
+import org.tms.entity.additions.TaskStatus;
+import org.tms.entity.additions.UserType;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 public interface UserService {

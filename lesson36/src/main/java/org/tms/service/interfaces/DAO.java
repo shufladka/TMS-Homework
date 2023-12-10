@@ -5,7 +5,7 @@ import org.tms.config.HibernateConfig;
 
 import java.util.UUID;
 
-public interface Dto<T> {
+public interface DAO<T> {
 
     T getById(UUID uuid);
     void delete(T obj);
