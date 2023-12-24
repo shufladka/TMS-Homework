@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>lesson 40</title>
+</head>
+<body>
+
+<form action="/save" method="post" modelAttribute="film">
+    Название фильма - <input type="text" placeholder="Название фильма" name="name"><br>
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1"></label><br>
+        Жанр фильма -
+        <select class="form-control" id="exampleFormControlSelect1" name="genre">
+            <option value="WESTERN">Western</option>
+            <option value="COMEDY">Comedy</option>
+            <option value="SCIENCE_FICTION">Science fiction</option>
+            <option value="DETECTIVE">Detective</option>
+            <option value="HORROR">Horror</option>
+            <option value="THRILLER">Thriller</option>
+        </select>
+    </div>
+
+    <br>
+    Год выхода - <input type="date" placeholder="Год" name="dateOfIssue"><br><br>
+    Оценка - <input type="text" placeholder="Ваша оценка" name="rating"><br><br>
+    <button type="submit">Save</button>
+    <br>
+    <hr>
+</form>
+
+<form th:action="@{/search}" method = "post" th:object="${searchDto}">
+    <input type="text" name = "name" placeholder="Название фильма" th:field="*{name}"><br><br>
+    <input type="text" name = "genre" placeholder="Жанр фильма" th:field="*{genre}"><br><br>
+    <input type="date" name = "dateOfIssue" placeholder="Год выхода" th:field="*{dateOfIssue}"><br><br>
+    <input type="number" name = "rating" placeholder="Оценка от" th:field="*{from}"><br><br>
+    <input type="number" name = "rating" placeholder="Оценка до" th:field="*{to}"><br><br>
+    <input type="submit" value="search">
+</form>
+<br>
+<hr>
+
+<p th:each="film: ${films}">
+    [(${film.name})]
+</p>
+
+<form th:action="@{/home/update/{id}(id=${film.getId()})}" method="post" th:each="film, iter : ${films}">
+    <input type="number" value="id" th:value="${film.getRating()}"><br>
+    <input type="submit" value="Update"><br>
+</form>
+
+</body>
+</html>
