@@ -9,13 +9,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/lesson1" />
-            <option value="$PROJECT_DIR$/lesson3" />
-            <option value="$PROJECT_DIR$/lesson4" />
-            <option value="$PROJECT_DIR$/lesson5" />
-            <option value="$PROJECT_DIR$/lesson6" />
-            <option value="$PROJECT_DIR$/lesson7" />
-            <option value="$PROJECT_DIR$/lesson8" />
-            <option value="$PROJECT_DIR$/lesson9" />
             <option value="$PROJECT_DIR$/lesson10" />
             <option value="$PROJECT_DIR$/lesson11" />
             <option value="$PROJECT_DIR$/lesson13-14" />
@@ -33,13 +26,22 @@
             <option value="$PROJECT_DIR$/lesson27" />
             <option value="$PROJECT_DIR$/lesson28" />
             <option value="$PROJECT_DIR$/lesson29" />
+            <option value="$PROJECT_DIR$/lesson3" />
             <option value="$PROJECT_DIR$/lesson30" />
             <option value="$PROJECT_DIR$/lesson34" />
             <option value="$PROJECT_DIR$/lesson35" />
             <option value="$PROJECT_DIR$/lesson36" />
             <option value="$PROJECT_DIR$/lesson39" />
+            <option value="$PROJECT_DIR$/lesson4" />
             <option value="$PROJECT_DIR$/lesson40" />
-            <option value="$PROJECT_DIR$/lesson41" /> 
+            <option value="$PROJECT_DIR$/lesson41" />
+            <option value="$PROJECT_DIR$/lesson43BL" />
+            <option value="$PROJECT_DIR$/lesson43IL" />
+            <option value="$PROJECT_DIR$/lesson5" />
+            <option value="$PROJECT_DIR$/lesson6" />
+            <option value="$PROJECT_DIR$/lesson7" />
+            <option value="$PROJECT_DIR$/lesson8" />
+            <option value="$PROJECT_DIR$/lesson9" />
           </set>
         </option>
       </GradleProjectSettings>
