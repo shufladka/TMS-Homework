@@ -35,27 +35,13 @@
             <option value="$PROJECT_DIR$/lesson4" />
             <option value="$PROJECT_DIR$/lesson40" />
             <option value="$PROJECT_DIR$/lesson41" />
+            <option value="$PROJECT_DIR$/lesson43BL_fixed" />
+            <option value="$PROJECT_DIR$/lesson43IL_fixed" />
             <option value="$PROJECT_DIR$/lesson5" />
             <option value="$PROJECT_DIR$/lesson6" />
             <option value="$PROJECT_DIR$/lesson7" />
             <option value="$PROJECT_DIR$/lesson8" />
             <option value="$PROJECT_DIR$/lesson9" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/lesson43BL" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/lesson43BL" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/lesson43IL" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/lesson43IL" />
           </set>
         </option>
       </GradleProjectSettings>
